@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hackathon.AgriFood.WebApi", "Hackathon.AgriFood.WebApi\Hackathon.AgriFood.WebApi.csproj", "{BC861191-4532-4A3E-9015-6D692AF1DFE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hackathon.AgriFood.DataAccess", "Hackathon.AgriFood.DataAccess\Hackathon.AgriFood.DataAccess.csproj", "{BB3E7BB7-14F7-4D9B-BE1A-5B7F5603147F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hackathon.AgriFood.Repositories", "Hackathon.AgriFood.Repositories\Hackathon.AgriFood.Repositories.csproj", "{D408FEE3-887E-4E88-B9D3-CC4BDAABCE51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hackathon.AgriFood.Services", "Hackathon.AgriFood.Services\Hackathon.AgriFood.Services.csproj", "{394762E9-B733-4E6F-BB96-0C8E2593F16E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hackathon.AgriFood.Models", "Hackathon.AgriFood.Models\Hackathon.AgriFood.Models.csproj", "{58029393-28A1-4562-BE72-8652B6D4F1ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC861191-4532-4A3E-9015-6D692AF1DFE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC861191-4532-4A3E-9015-6D692AF1DFE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC861191-4532-4A3E-9015-6D692AF1DFE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC861191-4532-4A3E-9015-6D692AF1DFE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB3E7BB7-14F7-4D9B-BE1A-5B7F5603147F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB3E7BB7-14F7-4D9B-BE1A-5B7F5603147F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB3E7BB7-14F7-4D9B-BE1A-5B7F5603147F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB3E7BB7-14F7-4D9B-BE1A-5B7F5603147F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D408FEE3-887E-4E88-B9D3-CC4BDAABCE51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D408FEE3-887E-4E88-B9D3-CC4BDAABCE51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D408FEE3-887E-4E88-B9D3-CC4BDAABCE51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D408FEE3-887E-4E88-B9D3-CC4BDAABCE51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{394762E9-B733-4E6F-BB96-0C8E2593F16E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{394762E9-B733-4E6F-BB96-0C8E2593F16E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{394762E9-B733-4E6F-BB96-0C8E2593F16E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{394762E9-B733-4E6F-BB96-0C8E2593F16E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58029393-28A1-4562-BE72-8652B6D4F1ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58029393-28A1-4562-BE72-8652B6D4F1ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58029393-28A1-4562-BE72-8652B6D4F1ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58029393-28A1-4562-BE72-8652B6D4F1ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BCC24BC8-0C22-41F8-BEC4-6D90ECFCA77F}
+	EndGlobalSection
+EndGlobal
