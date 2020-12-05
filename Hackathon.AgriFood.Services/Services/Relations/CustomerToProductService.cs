@@ -41,9 +41,9 @@ namespace Hackathon.AgriFood.Services.Services.Relations
         public async Task DeleteCustomerToProduct(CustomerToProductDto customerToProductDto)
         {
             var customerToProductRepository = _repositoryProvider.GetRelationRepository<CustomerToProduct>();
-            var customer = _entityConverter.GetModelFromDto(customerToProductDto);
+            var CustomerToProduct = _entityConverter.GetModelFromDto(customerToProductDto);
 
-            await customerToProductRepository.Delete(customer);
+            await customerToProductRepository.Delete(CustomerToProduct);
         }
 
         public async Task DeleteManyCustomerToProducts(IEnumerable<CustomerToProductDto> customerToProductDtos)
@@ -89,9 +89,9 @@ namespace Hackathon.AgriFood.Services.Services.Relations
         public async Task UpdateCustomerToProduct(CustomerToProductDto customerToProductDto)
         {
             var customerToProductRepository = _repositoryProvider.GetRelationRepository<CustomerToProduct>();
-            var customer = _entityConverter.GetModelFromDto(customerToProductDto);
+            var CustomerToProduct = _entityConverter.GetModelFromDto(customerToProductDto);
 
-            await customerToProductRepository.Update(customer);
+            await customerToProductRepository.Update(CustomerToProduct);
         }
 
         public async Task UpdateManyCustomerToProducts(IEnumerable<CustomerToProductDto> customerToProductDtos)
