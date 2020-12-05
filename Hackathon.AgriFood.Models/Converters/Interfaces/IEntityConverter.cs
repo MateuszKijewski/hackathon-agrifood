@@ -25,6 +25,16 @@ namespace Hackathon.AgriFood.Models.Converters.Interfaces
 
         TagDto GetDtoFromModel(Tag tag);
 
+        CustomerToFarmerDto GetDtoFromModel(CustomerToFarmer customerToFarmer);
+
+        CustomerToProductDto GetDtoFromModel(CustomerToProduct customerToProduct);
+
+        CustomerToShopDto GetDtoFromModel(CustomerToShop customerToShop);
+
+        ShopToFarmerDto GetDtoFromModel(ShopToFarmer shopToFarmer);
+
+        TagToProductDto GetDtoFromModel(TagToProduct tagToProduct);
+
         Customer GetModelFromDto(CustomerDto customerDto);
 
         Farmer GetModelFromDto(FarmerDto farmerDto);

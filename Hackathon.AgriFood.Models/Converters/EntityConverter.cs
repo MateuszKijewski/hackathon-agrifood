@@ -13,9 +13,9 @@ namespace Hackathon.AgriFood.Models.Converters
         public CustomerDto GetDtoFromModel(Customer customer)
         {
             var customerDto = customer.Adapt<CustomerDto>();
-            customerDto.FavoriteFarmers = customer.FavoriteFarmers.Select(x => x.Farmer).AsQueryable().ProjectToType<FarmerDto>();
-            customerDto.FavoriteProducts = customer.FavoriteProducts.Select(x => x.Product).AsQueryable().ProjectToType<ProductDto>();
-            customerDto.FavoriteShops = customer.FavoriteShops.Select(x => x.Shop).AsQueryable().ProjectToType<ShopDto>();
+            customerDto.FavoriteFarmers = customer.FavoriteFarmers.Select(x => x.Farmer.Adapt<FarmerDto>());
+            customerDto.FavoriteProducts = customer.FavoriteProducts.Select(x => x.Product.Adapt<ProductDto>());
+            customerDto.FavoriteShops = customer.FavoriteShops.Select(x => x.Shop.Adapt<ShopDto>());
 
             return customerDto;
         }
@@ -24,9 +24,9 @@ namespace Hackathon.AgriFood.Models.Converters
         {
             var farmerDto = farmer.Adapt<FarmerDto>();
             farmerDto.Localization = farmer.Localization.Adapt<LocalizationDto>();
-            farmerDto.Products = farmer.Products.AsQueryable().ProjectToType<ProductDto>();
-            farmerDto.Photos = farmer.Photos.AsQueryable().ProjectToType<FarmerPhotoDto>();
-            farmerDto.Shops = farmer.Shops.AsQueryable().ProjectToType<ShopDto>();
+            farmerDto.Products = farmer.Products.Select(x => x.Adapt<ProductDto>());
+            farmerDto.Photos = farmer.Photos.Select(x => x.Adapt<FarmerPhotoDto>());
+            farmerDto.Shops = farmer.Shops.Select(x => x.Adapt<ShopDto>());
             farmerDto.FavoringCustomers = farmer.FavoringCustomers.Select(x => x.Customer).AsQueryable().ProjectToType<CustomerDto>();
 
             return farmerDto;
@@ -43,8 +43,8 @@ namespace Hackathon.AgriFood.Models.Converters
         public LocalizationDto GetDtoFromModel(Localization localization)
         {
             var localizationDto = localization.Adapt<LocalizationDto>();
-            localizationDto.Farmers = localization.Farmers.AsQueryable().ProjectToType<FarmerDto>();
-            localizationDto.Shops = localization.Shops.AsQueryable().ProjectToType<ShopDto>();
+            localizationDto.Farmers = localization.Farmers.Select(x => x.Adapt<FarmerDto>());
+            localizationDto.Shops = localization.Shops.Select(x => x.Adapt<ShopDto>());
 
             return localizationDto;
         }
@@ -54,8 +54,8 @@ namespace Hackathon.AgriFood.Models.Converters
             var productDto = product.Adapt<ProductDto>();
             productDto.Farmer = product.Farmer.Adapt<FarmerDto>();
             productDto.Shop = product.Shop.Adapt<ShopDto>();
-            productDto.Photos = product.Photos.AsQueryable().ProjectToType<ProductPhotoDto>();
-            productDto.Tags = product.Tags.AsQueryable().ProjectToType<TagDto>();
+            productDto.Photos = product.Photos.Select(x => x.Adapt<ProductPhotoDto>());
+            productDto.Tags = product.Tags.Select(x => x.Adapt<TagDto>());
             productDto.FavoringCustomers = product.FavoringCustomers.Select(x => x.Customer).AsQueryable().ProjectToType<CustomerDto>();
 
             return productDto;
@@ -73,8 +73,8 @@ namespace Hackathon.AgriFood.Models.Converters
         {
             var shopDto = shop.Adapt<ShopDto>();
             shopDto.Localization = shop.Localization.Adapt<LocalizationDto>();
-            shopDto.Products = shop.Products.AsQueryable().ProjectToType<ProductDto>();
-            shopDto.Farmers = shop.Farmers.AsQueryable().ProjectToType<FarmerDto>();
+            shopDto.Products = shop.Products.Select(x => x.Adapt<ProductDto>());
+            shopDto.Farmers = shop.Farmers.Select(x => x.Adapt<FarmerDto>());
             shopDto.FavoringCustomers = shop.FavoringCustomers.Select(x => x.Customer).AsQueryable().ProjectToType<CustomerDto>();
 
             return shopDto;
@@ -94,6 +94,51 @@ namespace Hackathon.AgriFood.Models.Converters
             tagDto.TaggedProducts = tag.TaggedProducts.Select(x => x.Product).AsQueryable().ProjectToType<ProductDto>();
 
             return tagDto;
+        }
+
+        public CustomerToFarmerDto GetDtoFromModel(CustomerToFarmer customerToFarmer)
+        {
+            var customerToFarmerDto = customerToFarmer.Adapt<CustomerToFarmerDto>();
+            customerToFarmerDto.Customer = customerToFarmer.Customer.Adapt<CustomerDto>();
+            customerToFarmerDto.Farmer = customerToFarmer.Farmer.Adapt<FarmerDto>();
+
+            return customerToFarmerDto;
+        }
+
+        public CustomerToProductDto GetDtoFromModel(CustomerToProduct customerToProduct)
+        {
+            var customerToProductDto = customerToProduct.Adapt<CustomerToProductDto>();
+            customerToProductDto.Customer = customerToProduct.Customer.Adapt<CustomerDto>();
+            customerToProductDto.Product = customerToProduct.Product.Adapt<ProductDto>();
+
+            return customerToProductDto;
+        }
+
+        public CustomerToShopDto GetDtoFromModel(CustomerToShop customerToShop)
+        {
+            var customerToShopDto = customerToShop.Adapt<CustomerToShopDto>();
+            customerToShopDto.Customer = customerToShop.Customer.Adapt<CustomerDto>();
+            customerToShopDto.Shop = customerToShop.Shop.Adapt<ShopDto>();
+
+            return customerToShopDto;
+        }
+
+        public ShopToFarmerDto GetDtoFromModel(ShopToFarmer shopToFarmer)
+        {
+            var shopToFarmerDto = shopToFarmer.Adapt<ShopToFarmerDto>();
+            shopToFarmerDto.Shop = shopToFarmer.Shop.Adapt<ShopDto>();
+            shopToFarmerDto.Farmer = shopToFarmer.Farmer.Adapt<FarmerDto>();
+
+            return shopToFarmerDto;
+        }
+
+        public TagToProductDto GetDtoFromModel(TagToProduct tagToProduct)
+        {
+            var tagToProductDto = tagToProduct.Adapt<TagToProductDto>();
+            tagToProductDto.Tag = tagToProduct.Tag.Adapt<TagDto>();
+            tagToProductDto.Product = tagToProduct.Product.Adapt<ProductDto>();
+
+            return tagToProductDto;
         }
 
         public Customer GetModelFromDto(CustomerDto customerDto)

@@ -1,4 +1,5 @@
-﻿using Hackathon.AgriFood.Services.Interfaces;
+﻿using Hackathon.AgriFood.Models.Dtos;
+using Hackathon.AgriFood.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
@@ -21,6 +22,21 @@ namespace Hackathon.AgriFood.WebApi.Controllers
                 var requestedCustomers = await _customerService.GetAllCustomers();
 
                 return Ok(requestedCustomers);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e);
+            }
+        }
+
+        [HttpPost(ApiRoutes.Customer.Main)]
+        public async Task<IActionResult> Add([FromBody] CustomerDto customerDto)
+        {
+            try
+            {
+                await _customerService.AddCustomer(customerDto);
+
+                return Ok();
             }
             catch (Exception e)
             {
