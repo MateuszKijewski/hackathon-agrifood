@@ -4,9 +4,9 @@ using Hackathon.AgriFood.Models.Models.Relations;
 using System;
 using System.Collections.Generic;
 
-namespace Hackathon.AgriFood.Models.Models
+namespace Hackathon.AgriFood.Models.Dtos
 {
-    public class Shop : EntityBase
+    public class ShopDto : EntityBase
     {
         public string Slug { get; set; }
         public string FirstName { get; set; }
@@ -17,10 +17,10 @@ namespace Hackathon.AgriFood.Models.Models
         public DeliveryMethod? PreferredDeliveryMethod { get; set; }
         public Guid LocalizationId { get; set; }
 
-        public Localization Localization { get; set; }
-        public IEnumerable<Product> Products { get; set; }
-        public IEnumerable<ShopPhoto> Photos { get; set; }
-        public IEnumerable<ShopToFarmer> Farmers { get; set; }
-        public IEnumerable<CustomerToShop> FavoringCustomers { get; set; }
+        public LocalizationDto Localization { get; set; }
+        public IEnumerable<ProductDto> Products { get; set; }
+        public IEnumerable<ShopPhotoDto> Photos { get; set; }
+        public IEnumerable<FarmerDto> Farmers { get; set; }
+        public IEnumerable<CustomerDto> FavoringCustomers { get; set; }
     }
 }

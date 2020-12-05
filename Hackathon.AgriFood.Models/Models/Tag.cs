@@ -6,6 +6,6 @@ namespace Hackathon.AgriFood.Models.Models
 {
     public class Tag : EntityBase
     {
-        public ICollection<TagToProduct> TaggedProducts { get; set; }
+        public IEnumerable<TagToProduct> TaggedProducts { get; set; }
     }
 }

@@ -4,9 +4,9 @@ using Hackathon.AgriFood.Models.Models.Relations;
 using System;
 using System.Collections.Generic;
 
-namespace Hackathon.AgriFood.Models.Models
+namespace Hackathon.AgriFood.Models.Dtos
 {
-    public class Product : EntityBase
+    public class ProductDto : EntityBase
     {
         public string Description { get; set; }
         public decimal Price { get; set; }
@@ -18,10 +18,10 @@ namespace Hackathon.AgriFood.Models.Models
         public Guid? FarmerId { get; set; }
         public Guid? ShopId { get; set; }
 
-        public Farmer Farmer { get; set; }
-        public Shop Shop { get; set; }
-        public IEnumerable<ProductPhoto> Photos { get; set; }
-        public IEnumerable<TagToProduct> Tags { get; set; }
-        public IEnumerable<CustomerToProduct> FavoringCustomers { get; set; }
+        public FarmerDto Farmer { get; set; }
+        public ShopDto Shop { get; set; }
+        public IEnumerable<ProductPhotoDto> Photos { get; set; }
+        public IEnumerable<TagDto> Tags { get; set; }
+        public IEnumerable<CustomerDto> FavoringCustomers { get; set; }
     }
 }

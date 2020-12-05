@@ -14,9 +14,9 @@ namespace Hackathon.AgriFood.Models.Models
         public Guid? LocalizationId { get; set; }
 
         public Localization Localization { get; set; }
-        public ICollection<Product> Products { get; set; }
-        public ICollection<FarmerPhoto> Photos { get; set; }
-        public ICollection<ShopToFarmer> Shops { get; set; }
-        public ICollection<CustomerToFarmer> FavoringCustomers { get; set; }
+        public IEnumerable<Product> Products { get; set; }
+        public IEnumerable<FarmerPhoto> Photos { get; set; }
+        public IEnumerable<ShopToFarmer> Shops { get; set; }
+        public IEnumerable<CustomerToFarmer> FavoringCustomers { get; set; }
     }
 }
