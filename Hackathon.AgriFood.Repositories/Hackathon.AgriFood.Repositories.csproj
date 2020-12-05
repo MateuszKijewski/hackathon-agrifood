@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Hackathon.AgriFood.DataAccess\Hackathon.AgriFood.DataAccess.csproj" />
+    <ProjectReference Include="..\Hackathon.AgriFood.Models\Hackathon.AgriFood.Models.csproj" />
+  </ItemGroup>
+
 </Project>
