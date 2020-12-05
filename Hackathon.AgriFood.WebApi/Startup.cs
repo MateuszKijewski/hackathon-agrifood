@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using Hackathon.AgriFood.Models.Converters;
 using Hackathon.AgriFood.Models.Converters.Interfaces;
 using Hackathon.AgriFood.Repositories.Providers;
+using Hackathon.AgriFood.Services.Interfaces;
+using Hackathon.AgriFood.Services.Services;
 
 namespace Hackathon.AgriFood.WebApi
 {
@@ -29,6 +31,8 @@ namespace Hackathon.AgriFood.WebApi
 
             services.AddSingleton<IEntityConverter, EntityConverter>();
             services.AddTransient<IRepositoryProvider, RepositoryProvider>();
+
+            services.AddTransient<ICustomerService, CustomerService>();
 
             services.AddControllers();
         }

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -15,10 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Hackathon.AgriFood.DataAccess\Hackathon.AgriFood.DataAccess.csproj" />
     <ProjectReference Include="..\Hackathon.AgriFood.Repositories\Hackathon.AgriFood.Repositories.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\Hackathon.AgriFood.Services\Hackathon.AgriFood.Services.csproj" />
   </ItemGroup>
 
 
