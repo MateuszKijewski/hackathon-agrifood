@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Hackathon.AgriFood.DataAccess.Migrations
 {
     [DbContext(typeof(AgriFoodDbContext))]
-    [Migration("20201205010018_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20201205081522_Second-Migration")]
+    partial class SecondMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
