@@ -1,4 +1,5 @@
 ﻿using Hackathon.AgriFood.Models.Common.Interfaces;
+using System.Collections.Generic;
 
 namespace Hackathon.AgriFood.Models.Models
 {
@@ -10,5 +11,8 @@ namespace Hackathon.AgriFood.Models.Models
         public float Longitude { get; set; }
         public int? StreetNumber { get; set; }
         public int? LocalNumber { get; set; }
+
+        public ICollection<Farmer> Farmers { get; set; }
+        public ICollection<Shop> Shops { get; set; }
     }
 }

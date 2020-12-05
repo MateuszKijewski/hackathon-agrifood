@@ -1,5 +1,6 @@
 ﻿using Hackathon.AgriFood.Models.Common.Interfaces;
 using Hackathon.AgriFood.Models.Enums;
+using Hackathon.AgriFood.Models.Models.Relations;
 using System;
 using System.Collections.Generic;
 
@@ -18,6 +19,8 @@ namespace Hackathon.AgriFood.Models.Models
 
         public Localization Localization { get; set; }
         public ICollection<Product> Products { get; set; }
-        public ICollection<Photo> Photos { get; set; }
+        public ICollection<ShopPhoto> Photos { get; set; }
+        public ICollection<ShopToFarmer> Farmers { get; set; }
+        public ICollection<CustomerToShop> FavoringCustomers { get; set; }
     }
 }

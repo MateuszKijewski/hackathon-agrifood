@@ -1,4 +1,5 @@
 ﻿using Hackathon.AgriFood.Models.Common.Interfaces;
+using Hackathon.AgriFood.Models.Models.Relations;
 using System.Collections.Generic;
 
 namespace Hackathon.AgriFood.Models.Models
@@ -7,7 +8,8 @@ namespace Hackathon.AgriFood.Models.Models
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public ICollection<Shop> FavoriteShops { get; set; }
-        public ICollection<Farmer> FavoriteFarmers { get; set; }
+        public ICollection<CustomerToShop> FavoriteShops { get; set; }
+        public ICollection<CustomerToFarmer> FavoriteFarmers { get; set; }
+        public ICollection<CustomerToProduct> FavoriteProducts { get; set; }
     }
 }
