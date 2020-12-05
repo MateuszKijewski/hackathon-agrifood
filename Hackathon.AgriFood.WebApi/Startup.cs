@@ -5,7 +5,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-
+using Hackathon.AgriFood.Models.Converters;
+using Hackathon.AgriFood.Models.Converters.Interfaces;
+using Hackathon.AgriFood.Repositories.Providers;
 
 namespace Hackathon.AgriFood.WebApi
 {
@@ -24,6 +26,9 @@ namespace Hackathon.AgriFood.WebApi
             services.AddDbContext<AgriFoodDbContext>(options =>
                 options.UseSqlServer(
                         Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddSingleton<IEntityConverter, EntityConverter>();
+            services.AddTransient<IRepositoryProvider, RepositoryProvider>();
 
             services.AddControllers();
         }
